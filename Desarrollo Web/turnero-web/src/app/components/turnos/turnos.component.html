@@ -1,0 +1,54 @@
+<app-navbar></app-navbar>
+<div class="container border">
+    <hr>
+    <div class="row">
+        <div class="col">
+            <input type="text" class="form-control" placeholder="Buscar por id de Turno" [(ngModel)]="idTurno">
+        </div>
+        <div class="col">
+            <button class="btn btn-success" (click)="buscarXid()">Buscar</button>
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="Buscar por nombre de persona" [(ngModel)]="txtPersona">
+        </div>
+        <div class="col">
+            <button class="btn btn-success" (click)="buscarXPersona()">Buscar</button>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col">
+            <input type="date" class="form-control" placeholder="Buscar por fecha" [(ngModel)]="txtFecha">
+        </div>
+        <div class="col">
+            <button class="btn btn-success" (click)="buscarXfecha()">Buscar</button>
+        </div>
+    </div>
+    <hr>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id Turno</th>
+            <th scope="col">Nombre y apellido</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Hora</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Opciones</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let t of turnos">
+          <tr>
+            <!--<th scope="row">1</th>-->
+            <td>{{t.id}}</td>
+            <td>{{t.nombreApellido}}</td>
+            <td>{{t.fecha}}</td>
+            <td>{{t.hora}}</td>
+            <td>{{t.categoria.nombre}}</td>
+            <td>
+                <button type="button" class="btn btn-warning btn-sm" style="margin-left: 10px;" (click)="actualizarTurno(t.id)">Actualizar</button>
+                <button type="button" class="btn btn-danger btn-sm"  style="margin-left: 10px;" (click)="eliminarTurno(t.id)">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+</div>

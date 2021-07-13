@@ -1,0 +1,43 @@
+<app-navbar></app-navbar>
+<div class="container border"> 
+    <hr>
+    <h3>Turnos registrados para el {{fechaDelDia}}</h3>
+    <hr>
+    <div class="row">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Buscar por nombre de persona" [(ngModel)]="txtPersona">
+      </div>
+      <div class="col">
+        <button class="btn btn-success" (click)="buscar()">Buscar</button>
+        <button class="btn btn-warning" (click)="limpiarFiltro()">Limpiar filtro</button>
+      </div>
+      <div class="col">
+        <p style="color:red;">{{busqueda_no_valida}}</p>
+      </div>
+    </div>
+    <hr>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id Turno</th>
+            <th scope="col">Nombre y apellido</th>
+            <th scope="col">Hora</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Opciones</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let t of turnos">
+          <tr>
+            <!--<th scope="row">1</th>-->
+            <td>{{t.id}}</td>
+            <td>{{t.nombreApellido}}</td>
+            <td>{{t.hora}}</td>
+            <td>{{t.categoria.nombre}}</td>
+            <td>
+                <button type="button" class="btn btn-warning btn-sm" style="margin-left: 10px;">Actualizar</button>
+                <button type="button" class="btn btn-danger btn-sm"  style="margin-left: 10px;" (click)="eliminarTurno(t.id)">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,9 @@
+com\integrador\integrador\web\CategoriaControlador.class
+com\integrador\integrador\persistencia\CategoriaRepositorio.class
+com\integrador\integrador\web\TurnoControlador.class
+com\integrador\integrador\persistencia\TurnoRepositorio.class
+com\integrador\integrador\logica\CategoriaServicio.class
+com\integrador\integrador\logica\TurnoServicio.class
+com\integrador\integrador\modelo\Categoria.class
+com\integrador\integrador\IntegradorApplication.class
+com\integrador\integrador\modelo\Turno.class
